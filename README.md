@@ -19,9 +19,32 @@ To support chord control, we extended REMI by inserting two chord tokens per bar
 | `tokenizer_exp_02.json` | Vocabulary file that defines the token set used during training and generation, including pitch, duration, bar, position, and chord tokens. |
 | `train.ipynb` | Jupyter Notebook used to train the model. Handles data loading, model initialization, training loop, and evaluation. |
 
-## Model
+## Usage
 
-You can download our pre-trained model here: [Download Model](https://drive.google.com/file/d/1P92lUBfaDp65xHGGl88UNoz9gvmjDddT/view?usp=sharing)
+### Generating Music with Chord Progressions
+
+The basic usage is:
+
+```bash
+python infer.py --chords C_maj G_maj A_min F_maj --output output.mid
+```
+
+Where:
+- `--chords`: List of chords in the format `root_type` (e.g., C_maj, D_min, G_maj)
+- `--output`: Output MIDI filename (default: "output.mid")
+- `--temperature`: Temperature for generation (0.1-1.0, default: 0.9)
+- `--max_tokens`: Maximum number of tokens to generate (default: 1024)
+
+- 
+### Model Download
+
+Download our pre-trained model from [this Google Drive link](https://drive.google.com/file/d/1P92lUBfaDp65xHGGl88UNoz9gvmjDddT/view?usp=sharing) and extract it to the `Models/checkpoint-6200` directory:
+
+```bash
+mkdir -p Models/checkpoint-6200
+# After downloading, move the files to the Models/checkpoint-6200 directory
+```
+
 
 ## Results and Key Findings
 
