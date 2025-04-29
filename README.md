@@ -38,10 +38,10 @@ Where:
 - 
 ### Model Download
 
-Download our pre-trained model from [this Google Drive link](https://drive.google.com/file/d/1P92lUBfaDp65xHGGl88UNoz9gvmjDddT/view?usp=sharing) and extract it to the `Models/checkpoint-6200` directory:
+Download our pre-trained model from [this Google Drive link](https://drive.google.com/file/d/1P92lUBfaDp65xHGGl88UNoz9gvmjDddT/view?usp=sharing) and extract it to the `Models/` directory:
 
 ```bash
-mkdir -p Models/checkpoint-6200
+mkdir -p Models/
 # After downloading, move the files to the Models/checkpoint-6200 directory
 ```
 
