@@ -7,7 +7,7 @@ Our goal is to generate expressive piano solos that follow user-specified chord 
 
 ## Dataset
 
-We collected a dataset of pop piano performances and converted them into event-based sequences using the REMI tokenization method.
+We collected a dataset of pop piano performances from youtube and converted them into event-based sequences using the REMI tokenization method.
 To support chord control, we extended REMI by inserting two chord tokens per bar — representing the harmony in the first and second halves — which we call ChordREMI.
 
 ## Code Structure
