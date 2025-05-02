@@ -11,8 +11,14 @@ parser.add_argument('--temperature', type=float, default=0.9, help='Temperature 
 parser.add_argument('--max_tokens', type=int, default=1024, help='Maximum number of tokens to generate')
 args = parser.parse_args()
 
-torch.set_default_device("cuda")
-model = AutoModelForCausalLM.from_pretrained("Models\checkpoint-6200")
+
+device = "cuda" if torch.cuda.is_available() else "cpu"
+print(f"Using device: {device}")
+
+if device == "cuda":
+    torch.set_default_device(device)
+
+model = AutoModelForCausalLM.from_pretrained("Models/checkpoint-6200")
 tokenizer = ChordREMI(params="tokenizer_exp_02.json")
 
 print("Tokenizer vocabulary loaded")
@@ -22,8 +28,6 @@ self_input_tokens = [3]  # Start token
 # id list to pytorch tensor and add batch dimension 
 input_tensor = torch.tensor(self_input_tokens, dtype=torch.long).unsqueeze(0) 
 
-# device
-device = "cuda" if torch.cuda.is_available() else "cpu"
 input_tensor = input_tensor.to(device)
 
 from typing import List
